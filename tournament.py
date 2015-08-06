@@ -2,15 +2,15 @@
 # 
 # tournament.py -- implementation of a Swiss-system tournament
 #
-
+#imported the python psql plugin
 import psycopg2
 
-
+#connecting to db
 def connect():
     """Connect to the PostgreSQL database.  Returns a database connection."""
     return psycopg2.connect("dbname=tournament")
 
-
+#removing all matches
 def deleteMatches():
     """Remove all the match records from the database."""
     DB = connect()
@@ -19,7 +19,7 @@ def deleteMatches():
     DB.commit()
     DB.close()
 
-
+#removing all players
 def deletePlayers():
     """Remove all the player records from the database."""
     DB = connect()
@@ -28,7 +28,7 @@ def deletePlayers():
     DB.commit()
     DB.close()
 
-
+#adding player count up
 def countPlayers():
     """Returns the number of players currently registered."""
     DB = connect()
@@ -38,6 +38,7 @@ def countPlayers():
     DB.close()
     return p[0]
 
+#adding players
 def registerPlayer(name):
     """Adds a player to the tournament database.
   
@@ -53,6 +54,7 @@ def registerPlayer(name):
     DB.commit()
     DB.close()
 
+#viewing the player standings
 def playerStandings():
     """Returns a list of the players and their win records, sorted by wins.
 
@@ -73,7 +75,7 @@ def playerStandings():
     DB.close()
     return p
 
-
+#adding winners and losers of matches
 def reportMatch(winner, loser):
     """Records the outcome of a single match between two players.
 
@@ -87,7 +89,8 @@ def reportMatch(winner, loser):
     DB.commit()
     DB.close()
  
- 
+#used the testPairings function to fill the swissPairing matching requirements 
+#this pairs players my determining who one previous game
 def swissPairings():
     """Returns a list of pairs of players for the next round of a match.
   
