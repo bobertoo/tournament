@@ -7,5 +7,5 @@ tournament__test.py is the test script
 to run:
 load tournament.sql into postgresql by running psql and the while in the same direct as the tournament files, use the command: \i tournament.sql
 (i used postgresql in a linux virtual machine using vagrant and virtualbox and the vm from https://github.com/udacity/fullstack-nanodegree-vm as presented on the project details) 
-then run the tournament_test.py script by using the command: python tournament_test.py
+then run the tournament_test.py script by using the command: python tournament_test.py\n
 then you should see the results!
