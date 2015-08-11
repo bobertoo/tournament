@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # 
 # tournament.py -- implementation of a Swiss-system tournament
-# it will add and remove players show wins, 
+# it will add and remove players, show wins, 
 #  number of matches played, standings and will match with another player
 
 #imported the python psql plugin
